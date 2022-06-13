@@ -22,6 +22,9 @@
     <td><%= post.title %></td>
                 <td><%= post.content %></td>
                 <td>
+                  <a class="btn btn-success" href="/posts/<%= post.id %>" role="button"
+                    >Details</a>
+                  
                   <a href="/posts/<%= post.id %>/edit">
                     <button class="btn btn-primary">
                       Edit

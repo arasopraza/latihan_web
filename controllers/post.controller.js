@@ -17,4 +17,19 @@ module.exports = {
 
         return res.redirect('/posts');
     },
+
+    delete: async (req, res) => {
+        await Post.destroy({where: {id: req.params.id}});
+        return res.render('post/edit', {post});
+    },
+
+    edit: async(req, res) => {
+        const post = await Post.findByPk(req.params.id);
+        return res.render('post/edit', {post});
+    },
+
+    update: async (req, res) => {
+        await Post.update(req.body, {where: {id: req.params.id}});
+        return res.redirect('/posts');
+    }
 };
