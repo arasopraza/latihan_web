@@ -15,9 +15,9 @@
         </tr>
       </thead>
       <tbody>
-        <% posts.forEach(post => { %>
+        <% posts.forEach((post, index) => { %>
           <tr>
-            <td><%= post.id %></td>
+            <td><%= ++index %></td>
    
     <td><%= post.title %></td>
                 <td><%= post.content %></td>

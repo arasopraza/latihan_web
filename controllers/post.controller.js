@@ -25,7 +25,7 @@ module.exports = {
 
     delete: async (req, res) => {
         await Post.destroy({where: {id: req.params.id}});
-        return res.render('post/edit', {Post});
+        return res.redirect('/posts');
     },
 
     edit: async(req, res) => {
