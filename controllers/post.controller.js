@@ -8,6 +8,11 @@ module.exports = {
         });
     },
 
+    details: async (req, res) => {
+        const post = await Post.findByPk(req.params.id);
+        return res.render('post/details', {post });
+    },
+
     create: async (req, res) => {
         return res.render('post/create');
     },
@@ -20,7 +25,7 @@ module.exports = {
 
     delete: async (req, res) => {
         await Post.destroy({where: {id: req.params.id}});
-        return res.render('post/edit', {post});
+        return res.render('post/edit', {Post});
     },
 
     edit: async(req, res) => {
